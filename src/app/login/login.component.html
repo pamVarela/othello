@@ -1,0 +1,28 @@
+
+<div class="form-container" style="text-align: center">
+  <h1>Othello</h1>
+  <form>
+    <div class="form-group">
+      <button mat-button (click)="loginGoogle()" id="idGoogle">
+        Acceder con Google   <img id="imagoogle" src=".\assets\images\nexus2cee_new_google_icon.png" alt="Acceder con Google">
+      </button>
+     
+    </div>
+    <div class="form-group">
+        <button mat-button id="registrar" routerLink='/signup'>
+          No tienes cuenta? Registrate
+        </button>
+      </div>
+  </form>
+</div>
+
+
+
+<!-- <button (click)="login()">LOGIN</button>
+
+<div *ngIf="authService.user | async as user">
+
+      <h3>Hello {{user.displayName}}</h3>
+      <button (click)="authService.logout()">LOGIout</button>
+  </div> --> 
+

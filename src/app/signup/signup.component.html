@@ -1,0 +1,16 @@
+<div class="form-container" style="text-align: center">
+  <h2 style="color: white; font-size: 50px">Registro</h2>
+  <form #formdata='ngForm' (ngSubmit)="onSubmit(formdata)">
+    <div class="input">
+      <label>Correo</label>
+      <input type="text" (ngModel)="correo">
+    </div>
+    <div class="input">
+      <label>Contraseña</label>
+      <input type="password" (ngModel)="password">
+    </div>
+    <button mat-button id="registrar" type="submit" [disabled]="!formData.valid">Ingresar</button>
+      
+  </form>
+</div>
+

@@ -1,0 +1,29 @@
+:host {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#imagoogle{
+    position: relative;
+    height: 40px;
+    
+}
+#idGoogle{
+    background-color: gray;
+	width: 150%;
+	left: -25%;
+    height: 50px;
+    font-size: 17px;
+}
+
+#registrar{
+    width: 150%;
+	height: 50px;
+	left: -25%;
+	margin-top: 20px;
+    background-color: rgb(71, 167, 51); 
+    font-size: 17px;
+
+}
