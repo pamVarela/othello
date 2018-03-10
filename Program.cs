@@ -4,122 +4,97 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
-
 namespace Othello
 {
-    class Fichas
+    class Program
     {
-        public static int[,] tablero;
+        private static int[,] tablero;
 
-
-        public Fichas(int[,] tableroJugada, int tamTablero)
-        {
-            tablero = tableroJugada;
-        }
 
         /// <summary>
-        /// Función encargada de obtener las posiciones para comprobar si es necesario cambiar las fichas de color, recibe las posiciones                         
-        /// que va a validar y el tamaño del tablero
+        /// Función que va a rellena la matriz lógica con el tamaño de tablero elegido por el usuario.
+        /// Utiliza los números 1 = blanco, 0 = negro, 2 = espacio vacío
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
         /// <param name="tamTablero"></param>
         /// <returns></returns>
         
-
-        public static int[,] Comprobacion(int x, int y, int tamTablero) { 
-                                                                          
-            if ((x != 0) && (tablero[x, y] != tablero[x - 1, y] )){ //1    
-                Recorrido(x, y, tablero[x, y], -1, 0);
-            }   
-            if ((y != tamTablero - 1)&&(x!=0) && (tablero[x, y] != tablero[x - 1, y + 1]) )//2
-            {
-                Recorrido(x, y, tablero[x, y], -1, 1);
-            }
-            if ((y != tamTablero - 1) && (tablero[x, y] != tablero[x, y + 1]))//3
-            {  
-                Recorrido(x, y, tablero[x, y], 0, 1);
-            }
-            if ((y != tamTablero - 1) && (x!=tamTablero-1) && (tablero[x, y] != tablero[x + 1, y + 1]))//4
-            {   
-                Recorrido(x, y, tablero[x, y], 1, 1);
-            }
-            if ((x != tamTablero - 1) && (tablero[x, y] != tablero[x + 1, y]) )//5
-            {   
-                Recorrido(x, y, tablero[x, y], 1, 0);
-            }
-            if ((x != tamTablero-1)&&( y!=0) && (tablero[x, y] != tablero[x + 1, y - 1]))//6
-            {   
-                Recorrido(x, y, tablero[x, y], +1, -1);
-            }
-            if ((y != 0) && (tablero[x, y] != tablero[x, y - 1]))//7
-            {   
-                Recorrido(x, y, tablero[x, y], 0, -1);
-            }
-            if ((x != 0)&&(y!=0) && (tablero[x, y] != tablero[x -1, y - 1]))//8
-            {   
-                Recorrido(x, y, tablero[x, y], -1, -1);
-            }
-            return tablero;
-        }
+        public static void RellenarTablero(int tamTablero)
+        {
+            tablero = new int[8, 8]{{ 2,2,2,2,2,2,2,2 },
+                                    { 2,0,2,2,2,0,2,2 },
+                                    { 2,2,1,2,1,2,2,2 },
+                                    { 2,0,1,0,1,0,2,2 },
+                                    { 2,2,1,1,1,2,2,2 },
+                                    { 2,0,2,1,2,0,2,2 },
+                                    { 2,2,2,0,2,2,2,2 },
+                                    { 2,2,2,2,2,2,2,2 }};
 
 
-        /// <summary>
-        /// Función encargada de revisar si la dirección que recibe tiene la posibilidad de cambiar las fichas. Recibe las posiciones de la matriz, el color al que debe cambiar  
-        /// y sumaX, sumaY que significan la dirección en que se debe mover en la matriz                                                               
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="color"></param>
-        /// <param name="tamTablero"></param>
-        /// <returns></returns>
-
-        public static void Recorrido(int x, int y, int color, int sumaX, int sumaY) {  
-                                                                                      
-            int i = x + sumaX;                                                        
-            int j = y + sumaY;                                                        
-            int cantidad = 0;                                                         
-
-            while (tablero[i,j] != 2)
-            {
-                if (tablero[i, j] == color)
-                {
-                    cambiarFichas(x, y, i, j, color, sumaX, sumaY);
-                    break;
-                }
-                else {
-                    i = i + sumaX;
-                    j = j + sumaY;
-                    cantidad++;
-                }
-            }
-            //Console.ReadKey();
-        }
-
-
-        /// <summary>
-        /// Función que se encarga de cambiar el color de la fichas a nivel lógico 
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="i"></param>
-        /// <param name="j"></param>
-        /// <param name="color"></param>
-        /// <param name="tamTablero"></param>
-        /// <returns></returns>
-
-        public static void cambiarFichas(int x, int  y, int i, int j, int color, int sumaX, int sumaY) {
             
-            x = x + sumaX;
-            y = y + sumaY;
+            
+            //for (int x = 0; x < tamTablero; x++)
+            //{
+            //    for (int y = 0; y < tamTablero; y++)
+            //    {
+            //        if ((x == 3) && (y == 3))
+            //        {
+            //            tablero[x, y] = 0;
+            //        }
+            //        else if ((x == 3) && (y == 4))
+            //        {
+            //            tablero[x, y] = 1;
+            //        }
 
-            while (tablero[x,y]!=color) {
-                tablero[x, y] = color;
-                x = x + sumaX;
-                y = y + sumaY;
+            //        else if ((x == 4) && (y == 3))
+            //        {
+            //            tablero[x, y] = 1;
+            //        }
+            //        else if ((y == 4) && (x == 4))
+            //        {
+            //            tablero[x, y] = 0;
+            //        }
+            //        else
+            //        {
+            //            tablero[x, y] = 2;
+            //        }
+            //    }
+            //}
+        }
+
+
+        /// <summary>
+        /// Función que imprime los valores de la matriz
+        /// </summary>
+        /// <param name="tablero"></param>
+        /// <returns></returns>
+        /// 
+        public static void Imprimir(int[,] tablero ) {
+
+            for (int x = 0; x < tablero.GetLength(0); x++)
+            {
+                for (int y = 0; y < tablero.GetLength(1); y++)
+                {
+                    Console.Write("\t"+tablero[x, y]);
+                }
+                Console.WriteLine();
             }
+        }
+
+
+        static void Main(string[] args)
+        {
+            int tamTablero = 8;
+            RellenarTablero(tamTablero);
+            Imprimir(tablero);
+            Console.ReadKey();
+            Fichas tableroJugada = new Fichas(tablero, tamTablero);
+            int x = 0;
+            int y = 0;
+            Fichas.Comprobacion(3, 3, tamTablero);
+            Console.WriteLine("  ");
+            Imprimir(tablero);
+            Console.ReadKey();
+
         }
     }
 }
