@@ -1,0 +1,14 @@
+C:\Users\Valeria\Desktop\logica diseño\Othello\Othello\bin\Debug\Othello.exe.config
+C:\Users\Valeria\Desktop\logica diseño\Othello\Othello\bin\Debug\Othello.exe
+C:\Users\Valeria\Desktop\logica diseño\Othello\Othello\bin\Debug\Othello.pdb
+C:\Users\Valeria\Desktop\logica diseño\Othello\Othello\obj\Debug\Othello.csprojResolveAssemblyReference.cache
+C:\Users\Valeria\Desktop\logica diseño\Othello\Othello\obj\Debug\Othello.csproj.CoreCompileInputs.cache
+C:\Users\Valeria\Desktop\logica diseño\Othello\Othello\obj\Debug\Othello.exe
+C:\Users\Valeria\Desktop\logica diseño\Othello\Othello\obj\Debug\Othello.pdb
+C:\Users\Jurguen\Desktop\logica diseño\logica diseño\Othello\Othello\obj\Debug\Othello.csprojResolveAssemblyReference.cache
+C:\Users\Jurguen\Desktop\logica diseño\logica diseño\Othello\Othello\obj\Debug\Othello.csproj.CoreCompileInputs.cache
+C:\Users\Jurguen\Desktop\logica diseño\logica diseño\Othello\Othello\obj\Debug\Othello.exe
+C:\Users\Jurguen\Desktop\logica diseño\logica diseño\Othello\Othello\obj\Debug\Othello.pdb
+C:\Users\Jurguen\Desktop\logica diseño\logica diseño\Othello\Othello\bin\Debug\Othello.exe.config
+C:\Users\Jurguen\Desktop\logica diseño\logica diseño\Othello\Othello\bin\Debug\Othello.exe
+C:\Users\Jurguen\Desktop\logica diseño\logica diseño\Othello\Othello\bin\Debug\Othello.pdb
