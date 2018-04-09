@@ -1,0 +1,49 @@
+<ul>
+  <li><a >Perfil</a></li>
+  <li><a >Estadísticas</a></li>
+  <li><a >Jugar</a></li>
+  <li><a (click)="salir()">Salir</a></li>
+</ul>  
+
+<body>
+  <div *ngIf="authService.user | async as user">
+  <h3>Hello {{user.displayName}}</h3>
+  </div>
+  <button (click)="Pintar()"> Mostrar </button>
+  <div *ngIf="visible">  
+    <div class="contenedor">
+      <div class="juego">
+        <table>
+          <tr *ngFor = "let fila of matriz; let x = index">
+            <th *ngFor = "let numero of fila; let y = index">
+              <div *ngIf="numero == 0">
+                  <button (click)="Mostrar(x,y)" attr.id="{{x}},{{y}}" type="button"class="casilla" id="tres"> <img id="fichaNegra" src=".\assets\images\ficha_negra.png" alt="Sin imagen"> </button>            
+              </div>
+              <div *ngIf="numero == 1">
+                  <button (click)="Mostrar(x,y)" type="button" class="casilla" attr.id="{{x}},{{y}}"> <img id="fichaNegra" src=".\assets\images\ficha_blanca.png" alt="Sin imagen"> </button>            
+              </div>
+              <div *ngIf="numero == 2">
+            <button (click)="Mostrar(x,y)" type="button" attr.id="{{x}},{{y}}" class="casilla"></button>              
+              </div>
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="form-container" style="text-align: center">
+        
+      <div class="contenedorPuntuacion">
+          <h3 class="etiqueta"  >Tamaño <input type="number" value="0" id="tamañoMatriz"></h3>
+        <div class="puntuacion">
+          <h3 class="letras" style="text-align: center"><br><br>Blancas: </h3>
+          <h4 class="letras" style="text-align: center">0 </h4>
+          <h3 class="letras" style="text-align: center">Negras: </h3>
+          <h4 class="letras" style="text-align: center">0 </h4>
+        </div>
+          <button type="button" class="boton" >Pasar turno</button>
+          <br><br><br>
+          <button type="button" class="boton"  >Abandonar partida</button>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,162 @@
+.casilla {
+    width: 60px;
+    height: 60px;   
+    background: #4B610B;
+    align-content: center;
+    border:2px solid #C8C2BF;
+    margin: 0%;
+    
+}
+.casilla:hover {
+    background: #2E3B0B;
+    border:2px solid #C8C2BF;
+}
+ .casilla:active {
+     background: #4B610B;
+ }
+
+ .botones:hover{
+    background: #C8C2BF;
+    border:2px solid #C8C2BF;
+ }
+ .boton{
+    width: 110px;
+    height: 40px;   
+    background-color: transparent;
+    border: 2px solid #C8C2BF;   
+    margin: 0%;
+    font-style: italic;
+    color: #C8C2BF;
+    border-radius:10px;
+ }
+
+.encabezado{
+    background-color:#C8C2BF;
+ }
+
+.contenedor{
+    
+    width: 100%;
+    margin-left: 20% ; 
+    margin-top: 3% ;
+}
+
+.juego{
+    
+    overflow: auto;
+    width: 40%;
+    float: left;
+    height: auto;
+}
+
+.contenedorPuntuacion{
+    width: 22%;
+    height: auto;
+    float: left;
+    margin:0%;
+    
+}
+
+.puntuacion{
+    margin:20px; 
+    width: 255px;
+    height: 220px;
+    background-color:#C8C2BF ; 
+}
+
+.letras {
+    font-style: italic;
+    color:#4B610B;
+    
+}
+.etiqueta {
+    font-style: italic;
+    color:#C8C2BF;
+}
+
+
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C8C2BF;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #4B610B;
+    text-align: center;
+    padding: 14px 130px;
+    font-style: italic;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+#fichaNegra{
+    margin-left: 0px;
+    width: 40px;
+    height: 40px;
+    
+}
+#fichaBlanca{
+    margin-left: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+.contenedorPerfil{
+
+    overflow: auto;
+    width: 40%;
+    float: left;
+    height: auto;
+    margin-top: 5%;
+    margin-left: 10%;
+    background-color: transparent;
+    border: 2px solid #C8C2BF;   
+    border-radius:10px;
+
+}
+
+@media screen and (max-width:1200px){
+    .juego{
+        width: 100%;
+    }
+    .puntuacion{
+        width: 100%;
+    }
+    .casilla{
+
+        width: 45px;
+        height: 45px;
+    }
+    .boton{
+        width: 90px;
+        height: 30px;   
+    }   
+}
+
+@media screen and (max-width:500px){
+    .juego{
+        width: 100%;
+    }
+    .puntuacion{
+        width: 100%;
+    }
+    .casilla{
+
+        width: 30px;
+        height: 30px;
+    }
+    .boton{
+        width: 80px;
+        height: 20px;   
+    }
+}

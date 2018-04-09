@@ -1,0 +1,23 @@
+:host {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#imagoogle{
+    position: relative;
+    height: 40px;
+    
+}
+#idGoogle{
+    background-color: lightgray;
+	width: 60%;
+    height: 60px;
+    font-size: 17px;
+}
+
+#othello {
+	margin-bottom: 50px;
+    margin-top: 50px;
+}
