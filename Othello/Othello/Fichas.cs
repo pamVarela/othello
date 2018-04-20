@@ -11,14 +11,81 @@ namespace Othello
 {
     class Fichas
     {
+
+
+        //tablero
         public static int[,] tablero;
-
-
+        //suma de las posiciones
+        static int cantG=0;
+        //posiciones de la jugada del computador
+        public static int posXG;
+        public static int posYG;
+        
+        
         public Fichas(int[,] tableroJugada, int tamTablero)
         {
             tablero = tableroJugada;
         }
 
+        /// <summary>
+        /// Validar la posicion
+        /// </summary>
+        /// <param name="opt"></param>
+        /// <returns><returns>
+        public static bool validarPosicion(int x, int y,int opt,int tamTablero){
+            if(opt==1){
+                if ((x != 0) && (tablero[x, y] != tablero[x - 1, y] ) )
+                    return true;
+                else
+                    return false;
+            }
+            else if(opt==2){
+                if ((y != tamTablero - 1)&&(x!=0) && (tablero[x, y] != tablero[x - 1, y + 1]))
+                    return true;
+                else
+                    return false;
+            }
+            else if(opt==3){
+                if ((y != tamTablero - 1) && (tablero[x, y] != tablero[x, y + 1]) )
+                    return true;
+                else
+                    return false;
+            }
+            else if(opt==4){
+                if ((y != tamTablero - 1) && (x!=tamTablero-1) && (tablero[x, y] != tablero[x + 1, y + 1]) )
+                    return true;
+                else
+                    return false;
+            }
+            else if(opt==5){
+                if ((x != tamTablero - 1) && (tablero[x, y] != tablero[x + 1, y]))
+                    return true;
+                else
+                    return false;
+            }
+            else if(opt==6){
+                if ((x != tamTablero-1)&&( y!=0) && (tablero[x, y] != tablero[x + 1, y - 1]))
+                    return true;
+                else
+                    return false;
+            }
+            else if(opt==7){
+                if ((y != 0) && (tablero[x, y] != tablero[x, y - 1]))
+                    return true;
+                else
+                    return false;
+            }
+            else if(opt==8){
+                if ((x != 0)&&(y!=0) && (tablero[x, y] != tablero[x -1, y - 1]) )
+                    return true;
+                else
+                    return false;
+            }
+            return false;
+        }
+
+
+         
         /// <summary>
         /// Función encargada de obtener las posiciones para comprobar si es necesario cambiar las fichas de color, recibe las posiciones                         
         /// que va a validar y el tamaño del tablero
@@ -28,18 +95,13 @@ namespace Othello
         /// <param name="tamTablero"></param>
         /// <param opt="opcion 0(recorrido) o 1(contar)"></param>
         /// <returns></returns>
-        
-        static int cantG=0;
-        public static int posXG;
-        public static int posYG;
         public static int[,] Comprobacion(int x, int y,int color, int tamTablero,int opt) { 
             int cantidad=0;
            
-            if ((x != 0) && (tablero[x, y] != tablero[x - 1, y] ) ){ //1    
+            if (validarPosicion(x, y,1,tamTablero)){ //1    
                 //Computadora, recorre y cambia de color
                 if(opt==0){
                     if(tablero[x - 1, y]!=2){
-
                         Recorrido(x, y, tablero[x, y], -1, 0,tamTablero,opt);
                     }
                 }
@@ -53,7 +115,7 @@ namespace Othello
                 }
             }   
 
-            if ((y != tamTablero - 1)&&(x!=0) && (tablero[x, y] != tablero[x - 1, y + 1]) )//2
+            if (validarPosicion(x,y,2,tamTablero))//2
             {
                 //Computadora, recorre y cambia de color
                 if(opt==0){
@@ -71,7 +133,7 @@ namespace Othello
                 }
                 
             }
-            if ((y != tamTablero - 1) && (tablero[x, y] != tablero[x, y + 1]))//3
+            if (validarPosicion(x,y,3,tamTablero))//3
             {  
                 //Computadora, recorre y cambia de color
                 if(opt==0){
@@ -89,7 +151,7 @@ namespace Othello
                 }
 
             }
-            if ((y != tamTablero - 1) && (x!=tamTablero-1) && (tablero[x, y] != tablero[x + 1, y + 1]))//4
+            if (validarPosicion(x,y,4,tamTablero))//4
             {   
                 //Computadora, recorre y cambia de color
                 if(opt==0){
@@ -107,7 +169,7 @@ namespace Othello
                 }
 
             }
-            if ((x != tamTablero - 1) && (tablero[x, y] != tablero[x + 1, y]) )//5
+            if (validarPosicion(x,y,5,tamTablero))//5
             {   
                 //Computadora, recorre y cambia de color
                 if(opt==0){
@@ -124,7 +186,7 @@ namespace Othello
                     cantidad=cantidad+Recorrido(x, y, color, 1, 0,tamTablero,opt);
                 }
             }
-            if ((x != tamTablero-1)&&( y!=0) && (tablero[x, y] != tablero[x + 1, y - 1]))//6
+            if (validarPosicion(x,y,6,tamTablero))//6
             {
                 //Computadora, recorre y cambia de color
                 if(opt==0){
@@ -141,7 +203,7 @@ namespace Othello
                     cantidad=cantidad+Recorrido(x, y, color, 1, -1,tamTablero,opt);
                 }
             }
-            if ((y != 0) && (tablero[x, y] != tablero[x, y - 1]))//7
+            if (validarPosicion(x,y,7,tamTablero))//7
             {   
                 //Computadora, recorre y cambia de color
                 if(opt==0){
@@ -158,7 +220,7 @@ namespace Othello
                     cantidad=cantidad+Recorrido(x, y, color, 0,-1,tamTablero,opt);
                 }
             }
-            if ((x != 0)&&(y!=0) && (tablero[x, y] != tablero[x -1, y - 1]))//8
+            if (validarPosicion(x,y,8,tamTablero))//8
             {   
                 //Computadora, recorre y cambia de color
                 if(opt==0){
@@ -264,7 +326,7 @@ namespace Othello
                                                                                       
             int i = x + sumaX;                                                        
             int j = y + sumaY;                                                        
-            
+            //aqui se puede comprobar si el  recorrido es exitoso o no. osea si el mae puede poner una ficha en ese lugar. 
             while (tablero[i,j] != 2)
             {
                 if (tablero[i, j] == color)

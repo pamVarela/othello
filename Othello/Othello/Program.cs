@@ -89,10 +89,12 @@ namespace Othello
 
             //opcion 2 jugador
             else if(opt==2){
-            Console.WriteLine("  ");
+                
+                //Console.WriteLine("  ");
                 tablero[5,4]=0;
-                Fichas.Comprobacion(5, 4, 0,tamTablero, 3); 
+                Fichas.Comprobacion(5, 4, 0,tamTablero, 3);
             }
+            //validarposicion necesita las 8 posicionessi alguna es posible hacerla el retorna true.
             
             Imprimir(tablero);
             Console.ReadKey();
